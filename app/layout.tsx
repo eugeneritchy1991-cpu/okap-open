@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({ subsets: ["latin"], weight: ["500", "600", "700"] });
 
 export const metadata: Metadata = {
   title: "Okap Open — Cap-Haïtien Tennis & Culture (Dec 19–21, 2025)",
@@ -12,11 +15,11 @@ export const metadata: Metadata = {
     title: "Okap Open 2025 — Dec 19–21 · Cap-Haïtien, Haiti",
     description:
       "Where sport meets culture. Where Haiti meets the world. Register to play or partner with us.",
-    url: "https://okap-open.vercel.app", // optional: replace with your final custom domain later
+    url: "https://okap-open.vercel.app",
     siteName: "Okap Open",
     images: [
       {
-        url: "/okap-social-banner.jpg", // put this file in /public
+        url: "/okap-social-banner.jpg",
         width: 1200,
         height: 630,
         alt: "Okap Open 2025 — Cap-Haïtien Tennis & Culture",
@@ -41,52 +44,61 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        {/* Header / Nav */}
-        <header className="border-b border-gray-200 bg-white">
-          <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <body className={poppins.className}>
+        {/* Header / Navbar */}
+        <header className="border-b border-gray-200 bg-white/90 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+          <nav className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            {/* Logo and title */}
             <Link href="/" className="flex items-center gap-3">
               <Image
                 src="/logo.png"
-                alt="Okap Open 2025"
-                width={44}
-                height={44}
+                alt="Okap Open 2025 Logo"
+                width={50}
+                height={50}
                 priority
               />
-              <span className="text-xl font-extrabold text-[#0A5F59]">
+              <span className="text-2xl font-bold text-[#0A5F59] tracking-tight">
                 Okap Open 2025
               </span>
             </Link>
-            <div className="flex items-center gap-5">
-              <Link href="/players" className="hover:underline">
+
+            {/* Navigation links */}
+            <div className="flex items-center gap-8">
+              <Link
+                href="/players"
+                className="text-[16px] font-semibold text-[#0A5F59] hover:text-[#088C7E] transition-colors"
+              >
                 Players
               </Link>
-              <Link href="/partners" className="hover:underline">
-                Sponsors & Partners
+              <Link
+                href="/partners"
+                className="text-[16px] font-semibold text-[#0A5F59] hover:text-[#088C7E] transition-colors"
+              >
+                Sponsors &amp; Partners
               </Link>
             </div>
           </nav>
         </header>
 
-        {/* Page content */}
+        {/* Main content */}
         <main>{children}</main>
 
         {/* Footer */}
-        <footer className="mt-20 border-t border-gray-200">
-          <div className="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-600 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <footer className="mt-20 border-t border-gray-200 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-700 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <p>© 2025 PSN Entertainment · Okap Open</p>
-            <div className="flex gap-4">
-              <Link href="/players" className="hover:underline">
+            <div className="flex gap-5">
+              <Link href="/players" className="hover:text-[#088C7E]">
                 Register
               </Link>
-              <Link href="/partners" className="hover:underline">
+              <Link href="/partners" className="hover:text-[#088C7E]">
                 Partner
               </Link>
               <a
                 href="https://instagram.com/okap_open"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:underline"
+                className="hover:text-[#088C7E]"
               >
                 Instagram
               </a>

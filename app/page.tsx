@@ -46,7 +46,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/*  */}
+      {/* WHAT IS OKAP OPEN */}
       <section className="max-w-6xl mx-auto px-4 py-12 md:py-16">
         <h2 className="text-2xl md:text-3xl font-bold text-[#0A5F59]">What Is the Okap Open?</h2>
         <p className="mt-4 text-gray-700 leading-relaxed">
@@ -164,7 +164,7 @@ export default function Home() {
           </div>
           <div className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm">
             <h3 className="font-semibold">Admission</h3>
-            <p className="text-gray-700">Free to watch · Free to play (first edition)</p>
+            <p className="text-gray-700">Entry: $10 · Free to play (first edition)</p>
           </div>
         </div>
       </section>
