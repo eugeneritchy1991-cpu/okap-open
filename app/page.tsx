@@ -4,40 +4,42 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      {/* HERO — full-width image with gradient overlay */}
+      {/* HERO — full-width image with brand gradient and content card */}
       <section className="relative">
-        <div className="relative h-[420px] md:h-[520px] w-full">
+        {/* Background image */}
+        <div className="relative h-[460px] md:h-[560px] w-full">
           <Image
-            src="/hero-banner.jpg"
+            src="/hero-cap-haitien.jpg?v=3" // Updated hero image filename
             alt="Okap Open — Cap-Haïtien coastal tennis atmosphere"
             fill
             priority
             sizes="100vw"
             className="object-cover"
           />
-          {/* subtle brand gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#F59E0B]/20 via-[#11A37F]/20 to-[#0A5F59]/25" />
+          {/* Brand gradient overlay for cohesion with header */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#F59E0B]/20 via-[#11A37F]/18 to-[#0A5F59]/22" />
         </div>
 
-        {/* Hero content */}
+        {/* Content card */}
         <div className="max-w-6xl mx-auto px-4">
-          <div className="relative -mt-24 md:-mt-32 bg-white/95 backdrop-blur rounded-2xl p-6 md:p-8 shadow-lg">
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#0A5F59]">
-              Okap Open 2025 - December 19–21 · Cap-Haïtien, Haiti
+          <div className="relative -mt-24 md:-mt-32 bg-white/95 backdrop-blur rounded-2xl p-6 md:p-9 shadow-lg border border-gray-200">
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight text-[#0A5F59] tracking-tight">
+              Okap Open 2025 — December 19–21 · Cap-Haïtien, Haiti
             </h1>
-            <p className="mt-4 text-lg text-gray-700">
-              Where sport meets culture. Where Haiti meets the world.
+            <p className="mt-4 text-base md:text-lg text-gray-700 max-w-3xl">
+              Okap Open is the tennis & tourism showcase of Cap-Haïtien — where world-class competition meets culture, heritage, beaches, and nightlife.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
+
+            <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/players"
-                className="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold shadow-sm bg-[#0A5F59] text-white hover:bg-[#073A36] transition"
+                className="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold shadow-sm bg-[#0A5F59] text-white hover:bg-[#088C7E] transition-colors"
               >
                 Register to Play
               </Link>
               <Link
                 href="/partners"
-                className="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold shadow-sm border border-[#0A5F59] text-[#0A5F59] hover:bg-[#0A5F59] hover:text-white transition"
+                className="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold shadow-sm border border-[#0A5F59] text-[#0A5F59] hover:bg-[#0A5F59] hover:text-white transition-colors"
               >
                 Become a Sponsor
               </Link>
@@ -48,21 +50,16 @@ export default function Home() {
 
       {/* WHAT IS OKAP OPEN */}
       <section className="max-w-6xl mx-auto px-4 py-12 md:py-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#0A5F59]">What Is the Okap Open?</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-[#0A5F59]">What Is Okap Open?</h2>
         <p className="mt-4 text-gray-700 leading-relaxed">
-          <strong>Okap Open</strong> is more than a tennis tournament — it’s a movement.
-          Born from a vision to make <strong>Cap-Haïtien the Capital of Tennis in the Caribbean</strong>,
-          the event unites athletes, fans, and travelers from Haiti, the diaspora, and around the world.
+          <strong>Okap Open</strong> is more than a tennis tournament — it’s a movement to make
+          <strong> Cap-Haïtien the Capital of Tennis in the Caribbean</strong>. The event unites athletes,
+          fans, and travelers from Haiti, the diaspora, and around the world.
         </p>
         <p className="mt-4 text-gray-700 leading-relaxed">
-          For three days, the city becomes a stage where competition meets celebration —
-          international-level tennis by day, and culture, music, and hospitality by night.
-          Explore the Citadelle Laferrière, the Palais Sans-Souci, and Milot’s historic charm,
+          For three days, the city becomes a stage where competition meets celebration — international-level tennis by day,
+          and culture, music, and hospitality by night. Explore the Citadelle Laferrière and Palais Sans-Souci,
           then unwind on Cap-Haïtien’s beaches and vibrant nightlife.
-        </p>
-        <p className="mt-4 text-gray-700 leading-relaxed">
-          Whether you’re a player, partner, or spectator, this is your invitation to witness history in motion.
-          Come play. Come explore. Come experience Okap Open.
         </p>
       </section>
 
@@ -75,12 +72,12 @@ export default function Home() {
             <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
               <Image
                 src="/tennis-action.jpg"
-                alt="Tennis action at the Okap Open"
+                alt="Tennis action at Okap Open"
                 width={1200}
                 height={900}
                 className="h-56 w-full object-cover"
               />
-              <div className="p-4">
+              <div className="p-5">
                 <h3 className="font-semibold">World-Class Tennis</h3>
                 <p className="mt-1 text-gray-700 text-sm">
                   Players from Haiti, the diaspora, and abroad compete at international standards.
@@ -97,7 +94,7 @@ export default function Home() {
                 height={900}
                 className="h-56 w-full object-cover"
               />
-              <div className="p-4">
+              <div className="p-5">
                 <h3 className="font-semibold">Heritage & Pride</h3>
                 <p className="mt-1 text-gray-700 text-sm">
                   Visit the Citadelle and Sans-Souci — icons of Haitian history.
@@ -114,7 +111,7 @@ export default function Home() {
                 height={900}
                 className="h-56 w-full object-cover"
               />
-              <div className="p-4">
+              <div className="p-5">
                 <h3 className="font-semibold">Beaches & Nightlife</h3>
                 <p className="mt-1 text-gray-700 text-sm">
                   Unwind on white-sand beaches and enjoy vibrant local nightlife.
@@ -164,7 +161,7 @@ export default function Home() {
           </div>
           <div className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm">
             <h3 className="font-semibold">Admission</h3>
-            <p className="text-gray-700">Entry: $10 · Free to play (first edition)</p>
+            <p className="text-gray-700">Free to watch · Free to play (first edition)</p>
           </div>
         </div>
       </section>
