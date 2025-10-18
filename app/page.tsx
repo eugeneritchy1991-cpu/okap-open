@@ -2,6 +2,17 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
+  // Google Calendar "Add to Calendar" link (all-day, multi-day event)
+  // NOTE: Google uses exclusive end date for all-day events → 2025-12-22 to cover 19–21.
+  const gCalUrl =
+    "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+    "&text=" + encodeURIComponent("Okap Open 2025") +
+    "&dates=20251219/20251222" +
+    "&location=" + encodeURIComponent("Cap-Haïtien, Haiti") +
+    "&details=" + encodeURIComponent(
+      "Okap Open — tennis & tourism showcase of Cap-Haïtien. World-class competition meets culture, heritage, beaches, and nightlife. Learn more at okap-open."
+    );
+
   return (
     <>
       {/* HERO — full-width image with brand gradient and content card */}
@@ -16,7 +27,7 @@ export default function Home() {
             sizes="100vw"
             className="object-cover"
           />
-          {/* Brand gradient overlay for cohesion with header */}
+        {/* Brand gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#F59E0B]/20 via-[#11A37F]/18 to-[#0A5F59]/22" />
         </div>
 
@@ -27,7 +38,8 @@ export default function Home() {
               Okap Open 2025 — December 19–21 · Cap-Haïtien, Haiti
             </h1>
             <p className="mt-4 text-base md:text-lg text-gray-700 max-w-3xl">
-              Okap Open is the tennis & tourism showcase of Cap-Haïtien — where world-class competition meets culture, heritage, beaches, and nightlife.
+              Okap Open is the tennis & tourism showcase of Cap-Haïtien — where
+              world-class competition meets culture, heritage, beaches, and nightlife.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
@@ -65,13 +77,13 @@ export default function Home() {
           fans, and travelers from Haiti, the diaspora, and around the world.
         </p>
         <p className="mt-4 text-gray-700 leading-relaxed">
-          For three days, the city becomes a stage where competition meets celebration — international-level tennis by day,
-          and culture, music, and hospitality by night. Explore the Citadelle Laferrière and Palais Sans-Souci,
-          then unwind on Cap-Haïtien’s beaches and vibrant nightlife.
+          For three days, the city becomes a stage where competition meets celebration — international-level
+          tennis by day, and culture, music, and hospitality by night. Explore the Citadelle Laferrière and
+          Palais Sans-Souci, then unwind on Cap-Haïtien’s beaches and vibrant nightlife.
         </p>
       </section>
 
-      {/* FEATURE IMAGES — Tennis / Citadelle / Beach */}
+      {/* DISCOVER CAP-HAITIEN SECTION */}
       <section className="bg-[#FFF8EC]">
         <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
           <h2 className="text-2xl md:text-3xl font-bold text-[#0A5F59]">Discover Cap-Haïtien</h2>
@@ -79,14 +91,14 @@ export default function Home() {
             {/* Tennis action */}
             <Link
               href="/world-class-tennis"
-              className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0A5F59]"
+              className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow"
             >
               <Image
                 src="/tennis-action.jpg"
-                alt="World-Class Tennis"
+                alt="Tennis action at Okap Open"
                 width={1200}
                 height={900}
-                className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-56 w-full object-cover"
               />
               <div className="p-5">
                 <h3 className="font-semibold">World-Class Tennis</h3>
@@ -99,14 +111,14 @@ export default function Home() {
             {/* Citadelle */}
             <Link
               href="/heritage-and-pride"
-              className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0A5F59]"
+              className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow"
             >
               <Image
                 src="/citadelle.jpg"
-                alt="Heritage & Pride"
+                alt="Citadelle Laferrière — heritage and pride"
                 width={1200}
                 height={900}
-                className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-56 w-full object-cover"
               />
               <div className="p-5">
                 <h3 className="font-semibold">Heritage & Pride</h3>
@@ -119,14 +131,14 @@ export default function Home() {
             {/* Beach */}
             <Link
               href="/beaches-and-nightlife"
-              className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0A5F59]"
+              className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow"
             >
               <Image
                 src="/cap-beach.jpg"
-                alt="Beaches & Nightlife"
+                alt="Cap-Haïtien beach — relax after the matches"
                 width={1200}
                 height={900}
-                className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-56 w-full object-cover"
               />
               <div className="p-5">
                 <h3 className="font-semibold">Beaches & Nightlife</h3>
@@ -160,27 +172,49 @@ export default function Home() {
         </ul>
       </section>
 
-      {/* HIGHLIGHTS */}
+      {/* EVENT HIGHLIGHTS */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
         <h2 className="text-2xl md:text-3xl font-bold text-[#0A5F59]">Event Highlights</h2>
         <div className="mt-6 grid md:grid-cols-2 gap-6">
+          {/* Dates + Add to Calendar */}
           <div className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm">
             <h3 className="font-semibold">Dates</h3>
             <p className="text-gray-700">December 19–21, 2025</p>
+            <a
+              href={gCalUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-xl px-4 py-2 mt-3 text-sm font-semibold shadow-sm border border-[#0A5F59] text-[#0A5F59] hover:bg-[#0A5F59] hover:text-white transition-colors"
+              title="Add to Google Calendar"
+            >
+              Add to Google Calendar
+            </a>
           </div>
+
+          {/* Clickable Google Maps Location */}
           <div className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm">
             <h3 className="font-semibold">Location</h3>
-            <p className="text-gray-700">Cap-Haïtien, Haiti</p>
+            <p className="text-gray-700">
+              <a
+                href="https://maps.google.com/?q=Cap-Haïtien, Haiti"
+                target="_blank"
+                rel="noreferrer"
+                className="underline decoration-[#0A5F59]/30 underline-offset-4 hover:text-[#0A5F59] hover:decoration-[#0A5F59]"
+                title="Open Cap-Haïtien on Google Maps"
+              >
+                Cap-Haïtien, Haiti
+              </a>
+            </p>
           </div>
+
           <div className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm">
             <h3 className="font-semibold">Divisions</h3>
             <p className="text-gray-700">Men’s Singles · Women’s Singles</p>
           </div>
+
           <div className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm">
             <h3 className="font-semibold">Spectator Admission</h3>
-            <p className="text-gray-700">
-              $10 (1-Day Pass) via Eventbrite.
-            </p>
+            <p className="text-gray-700">$10 (1-Day Pass) via Eventbrite.</p>
             <a
               href="https://www.eventbrite.com/e/okap-open-tickets-1841514301849?aff=oddtdtcreator&utm_source=site&utm_medium=highlights&utm_campaign=okapopen2025"
               target="_blank"
