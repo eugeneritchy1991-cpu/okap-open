@@ -3,23 +3,23 @@ import Image from "next/image";
 export default function PlayersPage() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO — matches homepage look */}
       <section className="relative">
-        <div className="relative h-[320px] md:h-[420px] w-full">
+        <div className="relative h-[360px] md:h-[460px] w-full">
           <Image
-            src="/players-banner.jpg"
+            src="/players-banner.jpg?v=2" // rename or use ?v=2 to bust cache
             alt="Players — Okap Open"
             fill
             priority
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#F59E0B]/15 via-[#11A37F]/15 to-[#0A5F59]/20" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#F59E0B]/20 via-[#11A37F]/18 to-[#0A5F59]/22" />
         </div>
 
         <div className="max-w-6xl mx-auto px-4">
-          <div className="relative -mt-20 md:-mt-28 bg-white/95 backdrop-blur rounded-2xl p-6 md:p-8 shadow-lg">
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#0A5F59]">
+          <div className="relative -mt-20 md:-mt-28 bg-white/95 backdrop-blur rounded-2xl p-6 md:p-9 shadow-lg border border-gray-200">
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight text-[#0A5F59] tracking-tight">
               Play the Okap Open — Be Part of History
             </h1>
             <p className="mt-3 text-gray-700">
@@ -60,7 +60,6 @@ export default function PlayersPage() {
             No entry fee for the first edition. Selected players will receive email confirmation.
           </p>
 
-          {/* FORM */}
           <form
             className="mt-6 grid md:grid-cols-2 gap-4"
             method="POST"
@@ -92,7 +91,7 @@ export default function PlayersPage() {
             <label className="md:col-span-2 flex items-center gap-2 text-sm text-gray-700">
               <input type="checkbox" required /> I agree to the event’s Player Code of Conduct.
             </label>
-            <button type="submit" className="md:col-span-2 inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold shadow-sm bg-[#0A5F59] text-white hover:bg-[#073A36] transition">
+            <button type="submit" className="md:col-span-2 inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold shadow-sm bg-[#0A5F59] text-white hover:bg-[#088C7E] transition-colors">
               Submit My Registration
             </button>
           </form>
