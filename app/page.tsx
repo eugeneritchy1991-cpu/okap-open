@@ -9,7 +9,7 @@ export default function Home() {
         {/* Background image */}
         <div className="relative h-[460px] md:h-[560px] w-full">
           <Image
-            src="/hero-cap-haitien.jpg?v=3" // Updated hero image filename
+            src="/hero-cap-haitien.jpg?v=3"
             alt="Okap Open — Cap-Haïtien coastal tennis atmosphere"
             fill
             priority
@@ -37,6 +37,14 @@ export default function Home() {
               >
                 Register to Play
               </Link>
+              <a
+                href="https://www.eventbrite.com/e/okap-open-tickets-1841514301849?aff=oddtdtcreator&utm_source=site&utm_medium=hero&utm_campaign=okapopen2025"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold shadow-sm border border-[#0A5F59] text-[#0A5F59] hover:bg-[#0A5F59] hover:text-white transition-colors"
+              >
+                Buy Tickets
+              </a>
               <Link
                 href="/partners"
                 className="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold shadow-sm border border-[#0A5F59] text-[#0A5F59] hover:bg-[#0A5F59] hover:text-white transition-colors"
@@ -160,8 +168,18 @@ export default function Home() {
             <p className="text-gray-700">Men’s Singles · Women’s Singles</p>
           </div>
           <div className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm">
-            <h3 className="font-semibold">Admission</h3>
-            <p className="text-gray-700">Free to watch · Free to play (first edition)</p>
+            <h3 className="font-semibold">Spectator Admission</h3>
+            <p className="text-gray-700">
+              $10 (1-Day Pass) via Eventbrite.
+            </p>
+            <a
+              href="https://www.eventbrite.com/e/okap-open-tickets-1841514301849?aff=oddtdtcreator&utm_source=site&utm_medium=highlights&utm_campaign=okapopen2025"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-xl px-4 py-2 mt-3 text-sm font-semibold shadow-sm border border-[#0A5F59] text-[#0A5F59] hover:bg-[#0A5F59] hover:text-white transition-colors"
+            >
+              Buy Tickets
+            </a>
           </div>
         </div>
       </section>

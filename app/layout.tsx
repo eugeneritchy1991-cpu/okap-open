@@ -64,6 +64,14 @@ export default function RootLayout({
 
             {/* Navigation links */}
             <div className="flex items-center gap-8">
+              <a
+                href="https://www.eventbrite.com/e/okap-open-tickets-1841514301849?aff=oddtdtcreator&utm_source=site&utm_medium=nav&utm_campaign=okapopen2025"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[16px] font-semibold text-[#0A5F59] hover:text-[#088C7E] transition-colors"
+              >
+                Tickets
+              </a>
               <Link
                 href="/players"
                 className="text-[16px] font-semibold text-[#0A5F59] hover:text-[#088C7E] transition-colors"
@@ -86,8 +94,27 @@ export default function RootLayout({
         {/* Footer */}
         <footer className="mt-20 border-t border-gray-200 bg-gray-50">
           <div className="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-700 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <p>© 2025 PSN Entertainment · Okap Open</p>
+            <p>
+              © 2025{" "}
+              <a
+                href="https://instagram.com/psn_entertainment"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-[#0A5F59] hover:text-[#088C7E]"
+              >
+                PSN Entertainment
+              </a>{" "}
+              · Okap Open
+            </p>
             <div className="flex gap-5">
+              <a
+                href="https://www.eventbrite.com/e/okap-open-tickets-1841514301849?aff=oddtdtcreator&utm_source=site&utm_medium=footer&utm_campaign=okapopen2025"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-[#088C7E]"
+              >
+                Buy Tickets
+              </a>
               <Link href="/players" className="hover:text-[#088C7E]">
                 Register
               </Link>
