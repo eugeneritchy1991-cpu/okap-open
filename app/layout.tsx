@@ -7,6 +7,8 @@ import { Poppins } from "next/font/google";
 const poppins = Poppins({ subsets: ["latin"], weight: ["500", "600", "700"] });
 
 export const metadata: Metadata = {
+  // ✅ Use your live domain for correct absolute URLs in OG/Twitter
+  metadataBase: new URL("https://www.okapopen.com"),
   title: "Okap Open — Cap-Haïtien Tennis & Culture (Dec 19–21, 2025)",
   description:
     "Premier tennis & tourism event in Cap-Haïtien. Player registration and partnership opportunities.",
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
     title: "Okap Open 2025 — Dec 19–21 · Cap-Haïtien, Haiti",
     description:
       "Where sport meets culture. Where Haiti meets the world. Register to play or partner with us.",
-    url: "https://okap-open.vercel.app",
+    url: "https://www.okapopen.com",
     siteName: "Okap Open",
     images: [
       {
@@ -132,6 +134,19 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+
+        {/* Google Analytics 4 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WP192P4B4H"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-WP192P4B4H');
+            `,
+          }}
+        />
       </body>
     </html>
   );
