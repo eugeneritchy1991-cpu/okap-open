@@ -77,13 +77,16 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-[#0A5F59]">Discover Cap-Haïtien</h2>
           <div className="mt-6 grid md:grid-cols-3 gap-6">
             {/* Tennis action */}
-            <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+            <Link
+              href="/world-class-tennis"
+              className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0A5F59]"
+            >
               <Image
                 src="/tennis-action.jpg"
-                alt="Tennis action at Okap Open"
+                alt="World-Class Tennis"
                 width={1200}
                 height={900}
-                className="h-56 w-full object-cover"
+                className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="p-5">
                 <h3 className="font-semibold">World-Class Tennis</h3>
@@ -91,16 +94,19 @@ export default function Home() {
                   Players from Haiti, the diaspora, and abroad compete at international standards.
                 </p>
               </div>
-            </div>
+            </Link>
 
             {/* Citadelle */}
-            <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+            <Link
+              href="/heritage-and-pride"
+              className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0A5F59]"
+            >
               <Image
                 src="/citadelle.jpg"
-                alt="Citadelle Laferrière — heritage and pride"
+                alt="Heritage & Pride"
                 width={1200}
                 height={900}
-                className="h-56 w-full object-cover"
+                className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="p-5">
                 <h3 className="font-semibold">Heritage & Pride</h3>
@@ -108,16 +114,19 @@ export default function Home() {
                   Visit the Citadelle and Sans-Souci — icons of Haitian history.
                 </p>
               </div>
-            </div>
+            </Link>
 
             {/* Beach */}
-            <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+            <Link
+              href="/beaches-and-nightlife"
+              className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0A5F59]"
+            >
               <Image
                 src="/cap-beach.jpg"
-                alt="Cap-Haïtien beach — relax after the matches"
+                alt="Beaches & Nightlife"
                 width={1200}
                 height={900}
-                className="h-56 w-full object-cover"
+                className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="p-5">
                 <h3 className="font-semibold">Beaches & Nightlife</h3>
@@ -125,7 +134,7 @@ export default function Home() {
                   Unwind on white-sand beaches and enjoy vibrant local nightlife.
                 </p>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
